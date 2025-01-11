@@ -3,106 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NASA Royale is a leader in food production and processing, specializing in pig farming, food processing, and global logistics.">
+    <meta name="keywords" content="NASA Royale, food processing, pig farming, logistics, agriculture">
+    <meta property="og:title" content="NASA Royale - Excellence in Food Processing">
+    <meta property="og:image" content="path_to_your_hero_image.jpg">
+
     <title>NASA Royale - Excellence in Food Processing</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="logo">NASA Royale</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#manager">Manager</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Header -->
+<header>
+    <div class="logo">NASA Royale</div>
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav id="navMenu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#manager">Manager</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Hero Section -->
+<!-- Side Menu (Hidden by default) -->
+<div id="sideMenu" class="side-menu">
+    <ul>
+        <li><a href="#home"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="#about"><i class="fas fa-info-circle"></i>About</a></li>
+        <li><a href="#services"><i class="fas fa-cogs"></i>Services</a></li>
+        <li><a href="#pricing"><i class="fas fa-tag"></i>Pricing</a></li>
+        <li><a href="#manager"><i class="fas fa-users"></i>Manager</a></li>
+        <li><a href="#contact"><i class="fas fa-phone-alt"></i>Contact</a></li>
+    </ul>
+</div>
+
+<!-- Your existing content -
+   <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-text">
+            <br><br> <br><br> <br>
             <h1>Welcome to NASA Royale</h1>
             <p>Innovating the future of food processing and agriculture.</p>
             <br><br><br><br><br><br>
             <a href="#contact" class="cta-btn">Get in Touch</a>
+            <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+                <!-- About Us Section -->
+    <center>
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p>At NASA Royale, we elevate the standards of food production and processing. From sustainable farming to quality food packaging, we are committed to excellence.</p>
+        </section>
+    </center>
         </div>
     </section>
 
-    <!-- About Us Section -->
-     <center>
-    <section id="about" class="about-section">
-        <h2>About Us</h2>
-        <p>At NASA Royale, we elevate the standards of food production and processing. From sustainable farming to quality food packaging, we are committed to excellence.</p>
-    </section>
-</center>
-<br><br>
-    <!-- Services Section -->
-    <section id="services" class="services-section">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+    <center>
         <h2>Our Services</h2>
-        <div class="services-container">
-            <div class="service-card">
-                <i class="fas fa-drumstick-bite"></i>
-                <h3>Poultry Farming</h3>
-                <p>Providing quality, farm-fresh poultry.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-seedling"></i>
-                <h3>Food Processing</h3>
-                <p>Transforming fresh products for all markets.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-shipping-fast"></i>
-                <h3>Global Logistics</h3>
-                <p>Ensuring swift delivery worldwide.</p>
+    </center>
+    <div class="services-container">
+        <div class="service-card">
+            <br>
+            <i class="fas fa-piggy-bank"></i>
+            <h3>Pig Farming</h3>
+            <div class="slider">
+                <p>
+                    At NASA Royale, we are dedicated to raising healthy and well-nurtured pigs. Our farm focuses on sustainable and humane practices, ensuring that our pigs are raised in a clean and comfortable environment. We take pride in the quality of care provided to our livestock, which directly contributes to the superior quality of pork products we offer. Our commitment to excellence ensures that we meet the highest standards in the agro-processing industry, making NASA Royale a trusted name in Ghana's pork production sector.
+                </p>
+                <br>
+                <div class="slides">
+                    <div class="slide"><img src="https://tse3.mm.bing.net/th?id=OIP.CYzpg1711MNJ0k7s7wShwAHaHa&w=474&h=474&c=7" alt="Pig Farming Image 1"></div>
+                    <div class="slide"><img src="https://tse2.mm.bing.net/th?id=OIP.8vqHTdb5u893huvyYnrfdAHaFG&w=326&h=326&c=7" alt="Pig Farming Image 2"></div>
+                    <div class="slide"><img src="https://tse2.mm.bing.net/th?id=OIP.QZ67ckpzhkUFYmKkgDbyRgHaE6&w=314&h=314&c=7" alt="Pig Farming Image 3"></div>
+                </div>
             </div>
         </div>
-    </section>
-
+        <div class="service-card">
+            <br>
+            <i class="fas fa-seedling"></i>
+            <h3>Food Processing</h3>
+            <div class="slider"> 
+                <br>         
+                <p>
+                    At NASA Royale, we produce high-quality shito and Tom Brown. Our shito, made with a unique blend of spices, comes in various sizes for personal and commercial use. Our nutritious Tom Brown porridge mix, made from roasted maize and peanuts, is also available in different sizes, catering to all needs. We are committed to delivering quality and authentic taste in every product.
+                </p>
+                <br>
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="images\Shito_1kg-removebg-preview.png" alt="Food Processing Image 1"></div>
+                        <div class="slide"><img src="images\Shito_500ml-removebg-preview.png" alt="Food Processing Image 2"></div>
+                        <div class="slide"><img src="images\Shito_750ml-removebg-preview.png" alt="Food Processing Image 3"></div>
+                        <div class="slide"><img src="images\WhatsApp Image 2025-01-04 at 22.32.17_90b6bdc8.jpg" alt="Food Processing Image 3"></div>
+                        <div class="slide"><img src="images\WhatsApp Image 2025-01-04 at 22.32.17_b8a3ca4d.jpg" alt="Food Processing Image 3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="service-card">
+            <br>
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Global Logistics</h3>
+            <div class="slider">
+                <br>
+                <p>
+                    NASA Royale offers fast, reliable, and nationwide delivery for all your orders. Whether you're buying fresh poultry, processed food, or farm products, we ensure timely and safe delivery right to your doorstep. Our service features real-time tracking and affordable shipping rates. Order now and enjoy the convenience of hassle-free delivery!
+                </p>
+                <br>
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://tse1.mm.bing.net/th?id=OIP.4_AryF7RCv2D9Nadna_W-AHaE6&w=314&h=314&c=7" alt="Logistics Image 1"></div>
+                        <div class="slide"><img src="https://tse2.mm.bing.net/th?id=OIP.XkB_tdjaX1VrLVc5YAivNAHaE7&w=315&h=315&c=7" alt="Logistics Image 2"></div>
+                        <div class="slide"><img src="https://tse4.mm.bing.net/th?id=OIP.UT92CPAzIG5-PglfpZj_ggHaFj&w=355&h=355&c=7" alt="Logistics Image 3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- Pricing Section -->
     <section id="pricing" class="pricing-section">
-        <h2>Pricing</h2>
+        <div class="text-center">
+            <h2>Our Pricing Packages</h2>
+        </div>
         <div class="pricing-container">
+            <!-- Basic Package Card -->
             <div class="pricing-card">
                 <h3>Basic Package</h3>
-                <p>₵499</p>
-                <p>Affordable and efficient solutions for small-scale farms.</p>
+                <div class="text-slideshow" id="basicTextSlideshow">
+                    <p class="pricing-text active-text"><stong style="font-size: 35px;">Shito</stong><br>500ml<br><strong style="color: transparent;">Quantity</strong><input type="number" id="Quantity" placeholder="Quantity for Shito"></p>
+                    <p class="pricing-text"><stong style="font-size: 35px;">Tom Brown</stong><br>500g<br><strong style="color: transparent;">Quantity</strong><input type="number" id="Quantity" placeholder="Quantity for Tom Brown"></p>
+                    <button class="switch-text-btn previous" onclick="showPreviousText('basicTextSlideshow')"></button>
+                    <button class="switch-text-btn next" onclick="showNextText('basicTextSlideshow')"></button>
+                    <button class="Order">Order</button>
+                </div>
             </div>
+
+            <!-- Standard Package Card -->
             <div class="pricing-card">
                 <h3>Standard Package</h3>
-                <p>₵800</p>
-                <p>Comprehensive service with a focus on growth.</p>
+                <div class="text-slideshow" id="standardTextSlideshow">
+                    <p class="pricing-text active-text"><stong style="font-size: 35px;">Shito</stong><br>750ml<br><strong style="color: transparent;">Quantity</strong><input type="number" id="Quantity" placeholder="Quantity for Shito"></p>
+                    <p class="pricing-text"><stong style="font-size: 35px;">Tom Brown</stong><br>1kg<br><strong style="color: transparent;">Quantity</strong><input type="number" id="Quantity" placeholder="Quantity for Tom Brown"></p>
+                    <button class="switch-text-btn previous" onclick="showPreviousText('basicTextSlideshow')"></button>
+                    <button class="switch-text-btn next" onclick="showNextText('basicTextSlideshow')"></button>
+                    <button class="Order">Order</button>
+                </div>
             </div>
+
+            <!-- Premium Package Card -->
             <div class="pricing-card">
                 <h3>Premium Package</h3>
-                <p>₵2000/month</p>
-                <p>Top-tier service for large-scale operations.</p>
+                <div class="text-slideshow" id="premiumTextSlideshow">
+                    <p class="pricing-text active-text"><stong style="font-size: 35px;">Shito</stong><br>1litre<br><strong style="color: transparent;">Quantity</strong><input type="number" id="Quantity" placeholder="Quantity for Shito"></p>
+                    <p class="pricing-text"><stong style="font-size: 35px;">Tom Brown</stong><br>2kg<br><strong style="color: transparent;">Quantity</strong><input type="number" id="Quantity" placeholder="Quantity for Tom Brown"></p>
+                    <button class="switch-text-btn previous" onclick="showPreviousText('basicTextSlideshow')"></button>
+                    <button class="switch-text-btn next" onclick="showNextText('basicTextSlideshow')"></button>
+                    <button class="Order">Order</button>
+                </div>
             </div>
         </div>
     </section>
-
+  
+    
+<br><br><br><br><br><br><br><br><br><br>
+</section>
     <!-- Manager Section -->
     <section id="manager" class="manager-section">
         <h2>Meet Our Visionary</h2>
         <div class="manager-profile">
-            <img src="C:\Users\User\OneDrive\Dokumente\NASA Website\WhatsApp Image 2024-12-16 at 10.08.09_88c7a88c.jpg" alt="Manager's Picture" class="manager-img">
+            <img src="images\WhatsApp Image 2024-12-16 at 10.08.09_88c7a88c.jpg" alt="Manager's Picture" class="manager-img">
             <div class="manager-details">
+            
                 <h3>Millicent Nana Serwaa Asafu Adjaye</h3>
                 <p>A visionary leader, dedicated to excellence in food production and the future of the industry.</p>
-                <p><strong>Phone:</strong> +233-024-494-5496</p>
-                <p><strong>Email:</strong> millicent@nasaroyale.com</p>
+                <p> Phone:   +233-24-494-5496</p>
+                <p> Email:   millicent@nasaroyale.com</p>
+            
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
+        <center>
         <h2>Get in Touch</h2>
+    </center>
         <form class="contact-form">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
@@ -114,9 +216,9 @@
     <!-- Footer Section -->
     <footer>
         <div class="social-media">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/nanaserwaa.asafuadjaye/"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/nana_asafu?mx=2"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/nasa_royaleofficial/"><i class="fab fa-instagram"></i></a>
         </div>
         <p>&copy; 2025 NASA Royale. All Rights Reserved.</p>
     </footer>
