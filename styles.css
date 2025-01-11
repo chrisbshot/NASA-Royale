@@ -8,24 +8,29 @@
 /* Base Body Styling */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
+    background: #ffffff;
     color: #333;
 }
 
 /* Header */
 header {
-    background: #003366;
+    background: #2c3e50;
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid #ff0000;
 }
 
 header .logo {
     font-size: 32px;
     font-weight: 700;
+    letter-spacing: 2px;
 }
 
 header nav ul {
@@ -39,16 +44,19 @@ header nav ul li a {
     color: white;
     font-size: 16px;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #ff6600;
+    color: #ff0000;
 }
+
+/* Hamburger Menu */
 
 /* Hero Section */
 .hero {
-    background-image: url('hero-bg.jpg');
+    position: relative;
+    background-image: url('Farm.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -58,123 +66,469 @@ header nav ul li a:hover {
     flex-direction: column;
     text-align: center;
     color: #fff;
+    border-bottom: 5px solid #ff0000;
+    z-index: 1;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent dark overlay */
+    z-index: -1;
+}
+
+
 .hero-text h1 {
-    font-size: 60px;
+    font-size: 72px;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
 }
 
 .hero-text p {
     font-size: 24px;
-    margin-top: 15px;
+    margin-top: 20px;
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
 }
 
 .cta-btn {
-    padding: 15px 30px;
-    background-color: #ff6600;
+    padding: 18px 36px;
+    background-color: #0011ff;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 30px;
+    text-decoration: none;
     transition: background-color 0.3s;
+    
 }
 
 .cta-btn:hover {
-    background-color: #e04e00;
+    background-color: #000981;
 }
+
+/* Section Styling */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ff0000;
+    margin-bottom: 30px;
+}
+
+/* Services Section */
+
+
 
 /* Section Styling */
 .section {
     padding: 60px 20px;
     text-align: center;
+    border-bottom: 7px solid #ff0000;
+
+    
 }
 
 h2 {
     font-size: 36px;
     font-weight: 700;
-    color: #003366;
+    color: #ff0000;
     margin-bottom: 30px;
 }
 
-/* Services */
-.services-section {
-    background-color: #fff;
-    padding: 50px 0;
-}
-
+/* Services Section */
 .services-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 20px;
-    padding: 20px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    background-color: #ffffff;
+    
 }
 
+/* Service Card */
 .service-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #4753ff, #ff5e00); /* Blue to orange gradient */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    width: 500px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+    color: white;
     text-align: center;
-    flex: 1;
-    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+/* Hover Effects */
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    height: 1000px; /* Expanded height on hover */
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.3), rgb(170, 133, 31)); /* Lighter gradient on hover */
+    transform: scale(1.05); /* Slight scale-up effect */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25); /* Deepened shadow for emphasis */
 }
 
 .service-card i {
-    font-size: 50px;
-    color: #003366;
+    font-size: 100px;
+    color: #ffffff;
 }
 
 .service-card h3 {
-    font-size: 24px;
     margin-top: 15px;
-    font-weight: 600;
+    font-size: 50px;
+    color: #ffffff;
+    
 }
 
-/* Pricing */
+.service-card p {
+    font-size: 18px;
+    color: #ffffff;
+    
+    
+}
+
+.service-card .dropdown-content {
+    display: none;
+    padding: 40px;
+    border-radius: 10px;
+    position: absolute;
+    height: 100px;
+    width: 120px;
+    z-index: 9;
+    
+}
+
+.service-card:hover .dropdown-content {
+    display: block;
+    
+}
+
+/* Adjust the .slider styles to ensure it appears below the text */
+.service-card .slider {
+    margin-top: 20px; /* Adds space between the text and the slider */
+    width: 100%; /* Ensures the slider takes full width of the card */
+    height: 800px; /* Adjust height as needed */
+    overflow: hidden;
+    border-radius: 10px;
+    
+}
+
+.service-card .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    
+}
+
+.service-card .slide {
+    min-width: 100%;
+    transition: all 0.3s ease;
+    
+}
+
+.service-card .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    
+}
+
+
+
+/* Pricing Section */
 .pricing-section {
-    background-color: #f1f1f1;
-    padding: 50px 20px;
+    border-top: 7px solid #ff0000;
+    background: #ffffff;
+    padding: 100px 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    position: relative;
+    border-bottom: 7px solid #ff0000;
 }
 
+.pricing-section:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 255, 0.3), rgba(255, 0, 0, 0.3));
+    z-index: -1;
+}
+
+/* Pricing Container */
 .pricing-container {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    justify-content: center;
+    gap: 250px;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
+/* Pricing Card */
 .pricing-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ff7f00, #0400ff);
+    border-radius: 20px;
+    padding: 40px;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease-in-out, box-shadow 0.3s ease;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    color: #fff;
     text-align: center;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-color: gold;
 }
 
 .pricing-card h3 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #003366;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
 }
 
-.pricing-card p {
-    font-size: 18px;
-    margin-top: 10px;
+/* Button Styles */
+.switch-text-btn {
+    font-size: 10px;
+    background-color: rgba(167, 167, 167, 0.8);
+    color: #fcfcfc;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+.switch-text-btn.previous {
+    left: 5px;
+    top: 40px;
+}
+
+.switch-text-btn.next {
+    right: 5px;
+    top: 40px;
+}
+
+.switch-text-btn:hover {
+    background-color: rgba(167, 167, 167, 1);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.switch-text-btn.previous::before {
+    content: '\276E'; /* Unicode for left chevron */
+}
+
+.switch-text-btn.next::before {
+    content: '\276F'; /* Unicode for right chevron */
+}
+
+/* Text Slideshow */
+.text-slideshow {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.Order {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #ff7f50, #ff4500);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.Order:hover {
+    background: linear-gradient(135deg, #ff4500, #ff7f50);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Order:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Order:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+}
+
+.pricing-text {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateY(20px);
+}
+
+.pricing-text.active-text {
+    display: block;
+    opacity: 0;
+    transform: translateY(0);
+}
+
+/* Quantity Input */
+#Quantity {
+    width: 250px;
+    padding: 14px;
+    margin: 20px 0;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    font-size: 17px;
+    background: linear-gradient(to bottom, #fff, #f9f9f9);
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+#Quantity:hover {
+    border-color: #bbb;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.06);
+}
+
+#Quantity:focus {
+    border-color: #4A90E2;
+    outline: none;
+    background: linear-gradient(to bottom, #e6f3ff, #f9f9f9);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 10px rgba(74, 144, 226, 0.5), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Hover Effects */
+.pricing-card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #d2702f, #ffdbb8);
+    height: 550px;
+}
+
+.pricing-card:hover h3 {
+    transform: translate(-50%, -250%);
+}
+
+.pricing-card:hover .text-slideshow {
+    opacity: 1;
+    transform: translate(0%, 50%) translateY(0);
+}
+
+.pricing-card:hover .pricing-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design for Phones */
+@media (max-width: 768px) {
+    .pricing-section {
+        padding: 50px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .pricing-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .pricing-card {
+        width: 90%;
+        height: auto;
+        padding: 30px;
+        margin: 0 auto; /* Center cards */
+    }
+
+    .pricing-card h3 {
+        font-size: 24px;
+    }
+
+    .pricing-text {
+        font-size: 16px;
+    }
+
+    .Order {
+        font-size: 16px;
+        padding: 10px 25px;
+    }
+
+    #Quantity {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .switch-text-btn {
+        padding: 8px;
+    }
+}
+
 
 /* Manager Section */
 .manager-section {
     padding: 60px 20px;
-    background-color: #fff;
+    background-color: #f9f9f9;
     text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.manager-section:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.2), rgba(0, 51, 102, 0.2));
+    z-index: -1;
 }
 
 .manager-profile {
@@ -183,6 +537,7 @@ h2 {
     align-items: center;
     gap: 30px;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .manager-img {
@@ -190,67 +545,135 @@ h2 {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ff6600;
+    border: 4px solid #ff0000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.manager-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.manager-details {
+    max-width: 600px;
+    text-align: left;
 }
 
 .manager-details h3 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
     color: #003366;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.manager-details h3:hover {
+    color: #ff0000;
 }
 
 .manager-details p {
     font-size: 18px;
     color: #666;
+    line-height: 1.6;
+    margin-top: 10px;
 }
 
-/* Contact */
+.manager-details p a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.manager-details p a:hover {
+    color: #003366;
+}
+
+/* Contact Section */
 .contact-section {
-    background-color: #f9f9f9;
-    padding: 50px 20px;
+    background-color: #f0f4f7;
+    padding: 60px 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Form Layout */
 .contact-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.contact-form input, .contact-form textarea {
+/* Input Fields */
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-    max-width: 600px;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 18px;
+    border-radius: 12px;
     border: 1px solid #ddd;
     font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff0000;
+    box-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+    outline: none;
+}
+
+/* Textarea Styling */
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Submit Button */
 .contact-form button {
-    padding: 15px 30px;
-    background-color: #ff6600;
+    padding: 18px 40px;
+    background-color: #ff0000;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
 }
 
 .contact-form button:hover {
     background-color: #e04e00;
+    transform: translateY(-2px);
+}
+
+.contact-form button:active {
+    transform: translateY(2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 40px 20px;
+    }
+    
+    .contact-form {
+        gap: 15px;
+        width: 90%;
+    }
 }
 
 /* Footer */
 footer {
-    background-color: #003366;
+    background-color: #2c3e50;
     color: white;
     text-align: center;
     padding: 30px;
-}
-
-footer .social-media {
-    margin: 20px 0;
 }
 
 footer .social-media a {
@@ -261,4 +684,202 @@ footer .social-media a {
 
 footer p {
     font-size: 14px;
+}
+
+/* Mobile Specific */
+@media only screen and (max-width: 768px) {
+    header {
+        display: flex; /* Make header a flex container */
+        justify-content: space-between; /* Align logo and hamburger to opposite sides */
+        align-items: center;
+        flex-direction: row; /* Make sure the logo and hamburger are aligned horizontally */
+    }
+
+    header .logo {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Make sure hamburger is shown and aligned to the right */
+    header .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        margin-left: auto;
+    }
+
+    header .menu-active {
+        display: flex;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .service-card {
+        width: 90%;
+        height: 580px;
+    }
+    .service-card:hover {
+        height: 870px;
+         
+    }
+
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        width: 90%;
+        margin-bottom: 20px;
+        height: 400px;
+    }
+    
+
+    .manager-profile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .manager-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 90%;
+    }
+
+    .contact-form button {
+        width: 90%;
+    }
+}
+
+/* Side Menu */
+#sideMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 65%;
+    background-color: #2c3e50; /* Darker background */
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out;
+    z-index: 1001;
+    padding: 30px 20px;
+    font-family: 'Roboto', sans-serif; /* Sleek font */
+    color: #fff;
+}
+
+#sideMenu.active {
+    transform: translateX(0);
+}
+
+/* Side Menu List Styling */
+#sideMenu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 60px;
+}
+
+#sideMenu ul li {
+    margin: 20px 0;
+    border-bottom: 1px solid #516a83; /* Darker divider */
+    padding-bottom: 10px;
+    transition: background-color 0.3s ease-in-out; /* Smooth background transition */
+}
+
+#sideMenu ul li:last-child {
+    border-bottom: none;
+}
+
+#sideMenu ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #ecf0f1; /* Soft white text */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#sideMenu ul li a:hover {
+    color: #f39c12; /* Warm color on hover */
+    transform: translateX(10px);
+}
+
+#sideMenu ul li a i {
+    margin-right: 10px;
+    font-size: 24px; /* Icon size */
+    transition: transform 0.3s ease; /* Smooth icon effect */
+}
+
+#sideMenu ul li a:hover i {
+    transform: translateX(5px); /* Subtle icon movement */
+}
+
+/* Mobile Menu Toggle */
+.hamburger-menu {
+    display: block;
+    cursor: pointer;
+    z-index: 1002;
+    position: absolute; /* Changed to absolute */
+    top: 20px; /* Adjust the top positioning */
+    right: 20px; /* Move the hamburger to the right */
+    width: 30px;
+    height: 20px;
+}
+
+.hamburger-menu span {
+    display: block;
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    margin: 4px auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/* Hide Hamburger Menu on Larger Screens */
+@media (min-width: 768px) {
+    .hamburger-menu {
+        display: none;
+    }
 }
