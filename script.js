@@ -70,48 +70,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
 });
-// Import necessary Firebase modules
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 
-// Your Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCoi6xRtNAnPm7o9iYS-jduXKnbfkQjVmo",
-  authDomain: "nasa-royale.firebaseapp.com",
-  projectId: "nasa-royale",
-  storageBucket: "nasa-royale.firebasestorage.app",
-  messagingSenderId: "11144524438",
-  appId: "1:11144524438:web:09bc95bd3958857bf5c8b7",
-  measurementId: "G-2ECTLJ2RWT"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Initialize Firestore
-const db = getFirestore(app);
-
-// Example functions to add and retrieve data from Firestore
-async function addData() {
-  try {
-    const docRef = await addDoc(collection(db, "users"), {
-      name: "John Doe",
-      email: "john.doe@example.com",
-      age: 25
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
-}
-
-async function getData() {
-  const querySnapshot = await getDocs(collection(db, "users"));
-  querySnapshot.forEach((doc) => {
-    console.log(doc.id, " => ", doc.data());
-  });
-}
-
-// Call functions for testing
-addData();
-getData();
