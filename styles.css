@@ -56,7 +56,7 @@ header nav ul li a:hover {
 /* Hero Section */
 .hero {
     position: relative;
-    background-image: url('https://github.com/chrisbshot/NASA-Royale/blob/main/Farm.png');
+    background-image: url('https://scontent.facc1-1.fna.fbcdn.net/v/t39.30808-6/472474258_122096516870729873_2523479298533215317_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEoODmtyiH3KnqTO24QvYkEM46vkT3Hihszjq-RPceKG4EUnZsRDAKnX1VEPAzIPDCk_xoxA6Fod8X8yrW3NKCX&_nc_ohc=vzQNq4jV21cQ7kNvgE3mPp2&_nc_zt=23&_nc_ht=scontent.facc1-1.fna&_nc_gid=Aa14d6G_8CdwRbimITbUtmw&oh=00_AYBeh95bqqqTcM6dFPbTw94YxyhgY-X2zaP6zgdo9wCIEQ&oe=67898B13');
     background-size: cover;
     background-position: center;
     height: 100vh;
